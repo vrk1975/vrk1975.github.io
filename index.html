@@ -8,41 +8,73 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="site.js"></script>
     <style type="text/css">
-        .thumbnail, .profile {
-            position: absolute;
-        }
         .header {
-            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+        
+        .header img {
+            width: 100%;
+            max-width: 337px;
+        }
+
+        .routeLink {
+            text-decoration: none;
+        }
+
         .info {
-            top: 160px;
-            position: absolute;
+            padding: 0.25rem;
+        }
+
+        .info h5 {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .content {
+            max-width: 337px;
+            margin-bottom: 0.75rem;
+            border: solid 1px rgba(var(--bs-secondary-rgb));
+            border-radius: 5px;
+         }
+
+        .properties {
+            font-size: 80%;
+        }
+
+        .value {
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
+    <h1>Top Non AR Route List</h1>
     <div class="container-fluid p-4">
-        <div id="mainContainer" class="row">
-            <div class="col">
-                <div class="header">
-                    <img class="thumbnail" src="https://1967138230.rsc.cdn77.org/routes/82661/video/thumbnail_313x147.png" />
-                    <img class="profile" src="https://1967138230.rsc.cdn77.org/routes/82661/profile/profile_313x147_transparent.png" alt="82661" />
-                </div>
-                <div class="info">
-                    <h3>
-                        <a class="streched-link">
-                            Descent Calanna_Gallico_V2_XL
-                        </a>
-                    </h3>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <label class="col">Author</label>
-                            <h6 class="col">Deperol</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="row mb-4 bg-light p-4">
+            <div class="col-12 col-md-3">
+                <label class="form-label">Author</label>
+                <select id="author" class="form-select" value="--">
+                    <option value="--" selected>--</option>
+                </select>
             </div>
-
+            <div class="col-12 col-md-3">
+                <label class="form-label">Ride With</label>
+                <select id="rideWith" class="form-select" value="--">
+                    <option value="--" selected>--</option>
+                    <option value="bicycle">Bicycle</option>
+                    <option value="car">Car</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-3">
+                <label class="form-label">Country</label>
+                <select id="country" class="form-select" value="--" >
+                    <option value="--" selected>--</option>
+                </select>
+            </div>
+        </div>
+        <div id="mainContainer" class="row">
+            <!--dynamic-->
         </div>
     </div>
 </body>
