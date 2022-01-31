@@ -7,6 +7,7 @@ var routes;
 window.onload = function () {
     let req = new XMLHttpRequest();
     req.open("get", "routes.json");
+    req.setRequestHeader();
     req.onreadystatechange = (xhr, ev) => {
         routes = eval(req.responseText);
         populateRoutes();
@@ -19,5 +20,13 @@ function makeRouteUrl(url, routeId) {
 }
 
 function populateRoutes() {
-    
+    let e = document.getElementById("mainContainer");
+
+    routes.forEach((v, i, a) => {
+        var div = document.createElement("div");
+        div.className = "col";
+        div.innerText = v["Route Name"];
+
+        e.appendChild(div);
+    });
 }
