@@ -9,8 +9,10 @@ window.onload = function () {
     req.open("get", "routes.json");
     req.setRequestHeader();
     req.onreadystatechange = (xhr, ev) => {
-        routes = eval(req.responseText);
-        populateRoutes();
+        if (req.readyState == 4) {
+            routes = eval(req.responseText);
+            populateRoutes();
+        }
     }
     req.send();
 }
